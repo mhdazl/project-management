@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #190041;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #f4d097;
+  border-radius: 14px;
+  border: 3px solid #f4d097;
+}
+
+@media (min-width: 768px) {
+  .md\:ml-3\/12 {
+    margin-left: 25%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:ml-3\/12 {
+    margin-left: 25%;
+  }
+}
+
+.bg-custom {
+  background: #fffbf5;
+}
+
+.card-custom-bg {
+  background: #fdf4e6;
+}
+
+.primary-bg {
+  background: #190041;
+}
+
+.border {
+  border: 1px solid #190041;
+}
+
+.border-card:hover {
+  border: 1px solid #190041;
+}
+
+.custom-input::placeholder {
+  color: #190041 !important;
+  font-size: smaller;
+}
+
+.custom-input:focus {
+  border-color: #190041 !important;
+}
+
+.primary-text-color {
+  color: #190041 !important;
+}
+
+.custom-width {
+  width: 150px !important; /* Adjust the value as per your requirements */
+}
+
+.icon-background {
+  background: #9e7bff;
+  border-radius: 4px;
+}

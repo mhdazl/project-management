@@ -1,0 +1,39 @@
+diff --git a/node_modules/sequelize/lib/data-types.js b/node_modules/sequelize/lib/data-types.js
+index 39dbcce..a7e617a 100644
+--- a/node_modules/sequelize/lib/data-types.js
++++ b/node_modules/sequelize/lib/data-types.js
+@@ -785,7 +785,7 @@ class ARRAY extends ABSTRACT {
+  * GeoJSON is accepted as input and returned as output.
+  *
+  * In PostGIS, the GeoJSON is parsed using the PostGIS function `ST_GeomFromGeoJSON`.
+- * In MySQL it is parsed using the function `GeomFromText`.
++ * In MySQL it is parsed using the function `ST_GeomFromText`.
+  *
+  * Therefore, one can just follow the [GeoJSON spec](http://geojson.org/geojson-spec.html) for handling geometry objects.  See the following examples:
+  *
+@@ -837,10 +837,10 @@ class GEOMETRY extends ABSTRACT {
+     this.srid = options.srid;
+   }
+   _stringify(value, options) {
+-    return `GeomFromText(${options.escape(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
++    return `ST_GeomFromText(${options.escape(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
+   }
+   _bindParam(value, options) {
+-    return `GeomFromText(${options.bindParam(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
++    return `ST_GeomFromText(${options.bindParam(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
+   }
+ }
+ 
+@@ -880,10 +880,10 @@ class GEOGRAPHY extends ABSTRACT {
+     this.srid = options.srid;
+   }
+   _stringify(value, options) {
+-    return `GeomFromText(${options.escape(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
++    return `ST_GeomFromText(${options.escape(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
+   }
+   _bindParam(value, options) {
+-    return `GeomFromText(${options.bindParam(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
++    return `ST_GeomFromText(${options.bindParam(wkx.Geometry.parseGeoJSON(value).toWkt())})`;
+   }
+ }
+ 
